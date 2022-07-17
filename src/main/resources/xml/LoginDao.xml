@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iweb.dao.LoginDao">
+
+    <!--查询用户用作登录-->
+    <select id="selectUserByLogAndPas" resultType="TbUser">
+        select * from tb_user
+        where login_name=#{loginAcct} and
+              password=#{userPswd}
+    </select>
+</mapper>

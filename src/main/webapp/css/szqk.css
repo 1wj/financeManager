@@ -1,0 +1,124 @@
+body {
+    font-family: "Microsoft YaHei";
+}
+
+
+
+#div1{
+    position: absolute;
+
+    background-color: #E6E8F5;
+    width: 120px;
+    height: 100%;
+    float: left;
+    
+}
+#div2{
+  
+    position: absolute;
+   
+    left: 120px;
+    right: 120px;
+    height: 100%;   
+
+}
+
+#div3{
+    position: absolute;
+    background-color: #E6E8F5;
+    width: 120px;
+    height: 100%;
+    right: 0px;
+    float:left;
+}
+
+.addData{
+    height: 38px;
+    width: 100px;
+    color: #216DF5;
+    background-color: #E9F3FE;
+    border-radius: 3px;
+    border: #216df5 solid 1px;
+}
+
+.main-input {
+    margin-top: 45px;
+    margin-left: 70px;
+}
+
+
+
+.bk{
+    border-radius: 3px;
+    border: #216df5 solid 1px;
+}
+
+
+
+
+
+
+.tab {
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 24px;
+}
+
+.mtb {
+    width: 100%;
+    border: hidden;
+}
+
+
+.mtb th {
+    color: #878DA5;
+    background-color: #ECF1F9;
+    border-radius: 1px;
+    height: 35px;
+}
+
+.mtb td,
+th {
+    text-align: center;
+    height: 50px;
+    color: #2D2F33;
+}
+
+.mtb tr:nth-child(odd) {
+    /* 偶数行 */
+    background-color: #ECF1F9;
+}
+
+a {
+    text-decoration: none;
+    color: #2993F8;
+}
+
+.pagination {
+    float: right;
+}
+
+.tbt {
+    float: left;
+    margin-top: 25px;
+}
+
+label {
+
+    color: #8F9092;
+}
+
+.add {
+    margin-left: 40px;
+}
+
+.add tr {
+    height: 60px;
+}
+
+.add tr input {
+    width: 282px;
+    height: 32px;
+}
+
+

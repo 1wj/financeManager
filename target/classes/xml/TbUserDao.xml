@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iweb.dao.TbUserDao">
+
+
+    <!--查询要导出的数据-->
+    <select id="queryAllList" resultType="UserData">
+        select * from tb_user
+    </select>
+
+    <!--根据id查询用户-->
+    <select id="selectUserByid" resultType="TbUser">
+        select  * from tb_user
+        where id=#{id}
+    </select>
+
+    <!--修改数据-->
+    <update id="editUser">
+        update tb_user
+        set user_name=#{userName},
+            login_name=#{loginName},
+            password=#{password},
+            type=#{type},
+            id_no=#{idNo},
+            phone_no=#{phoneNo}
+        where  id=#{id}
+    </update>
+
+    <!--根据id删除数据-->
+    <delete id="deleteUserById">
+        delete  from tb_user where id=#{id}
+    </delete>
+
+    <!--增加数据-->
+    <insert id="addUser">
+        insert into tb_user(
+          id,
+          user_name,
+          login_name,
+          password,
+          type,
+          id_no,
+          phone_no
+        ) values (
+          #{id},
+          #{userName},
+          #{loginName},
+          #{password},
+          #{type},
+          #{idNo},
+          #{phoneNo}
+        )
+    </insert>
+
+    <!--查所有数量-->
+    <select id="selectConut" resultType="int">
+        select  count (*) from tb_user;
+    </select>
+
+
+    <!--查全部-->
+    <select id="selectUserList"  resultType="TbUser">
+        select  * from tb_user
+        limit #{limit} offset #{skipCount}
+    </select>
+
+
+</mapper>

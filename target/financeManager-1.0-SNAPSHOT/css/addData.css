@@ -1,0 +1,66 @@
+
+body{
+    font-family:"Microsoft YaHei";
+    width: 500px;
+    height: 542px;
+}
+
+#div1{
+    
+    
+   
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    width: 500px;
+    height: 542px;
+}
+
+
+
+#tab{
+
+    margin-top: 20px;
+    border-collapse: collapse; 
+   
+    margin-left: 40px;
+    margin-right: 40px;
+
+}
+tr{
+
+    height: 60px;
+}
+
+
+td.co{
+    color: #8f9092;
+}
+
+
+
+input.ys{
+    color: #d2d2d2;
+    width: 274px;
+    height: 26px;
+}
+
+select{
+    border: 1px solid #cfd6e4;
+    border-radius: 3px;
+    width: 282px;
+    height: 32px;
+  
+}
+
+.btn{
+    background-color: #2986f7;
+    border-radius: 3px;
+    border: gray solid 1px;
+    width: 78px;
+    height: 30px;
+    color: #f0f2f5;
+}

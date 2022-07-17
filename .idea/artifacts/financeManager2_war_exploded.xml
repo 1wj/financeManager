@@ -1,0 +1,55 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="financeManager2:war exploded">
+    <output-path>$PROJECT_DIR$/../financeManager2/target/financeManager2-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>financeManager2</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="financeManager2" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.3.1" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.1" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.9" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.12" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:18.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.3.3" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.24" />
+          <element id="library" level="project" name="Maven: com.mangofactory:swagger-springmvc:0.9.5" />
+          <element id="library" level="project" name="Maven: com.wordnik:swagger-annotations:1.3.11" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.5" />
+          <element id="library" level="project" name="Maven: com.mangofactory:swagger-models:0.9.5" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:4.2.10.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:4.2.10.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:4.2.10.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:4.2.10.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:4.2.10.RELEASE" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/../financeManager2/target/financeManager2-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="financeManager2/web/Web" />
+    </root>
+  </artifact>
+</component>

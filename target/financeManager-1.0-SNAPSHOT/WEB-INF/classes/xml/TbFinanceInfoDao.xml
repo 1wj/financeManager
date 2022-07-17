@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iweb.dao.TbFinanceInfoDao">
+
+    <!--修改数据-->
+    <update id="editFinanceInfo">
+        update tb_finance_info
+        set    claimer_user_id=  #{claimerUserId},
+               reason= #{reason},
+               reason_time=  to_timestamp(#{reasonTime},'yyyy-MM-dd hh24:mi:ss'),
+               sum= #{sum},
+               type= #{type},
+               update_time=  to_timestamp(#{updateTime},'yyyy-MM-dd hh24:mi:ss')
+        where  id=#{id}
+    </update>
+
+    <!--根据id删除数据-->
+    <delete id="deleteFinanceInfoById">
+        delete  from tb_finance_info where id=#{id}
+    </delete>
+
+    <!--增加数据-->
+    <insert id="addFinanceInfo">
+        insert into tb_finance_info(
+            id,
+            claimer_user_id,
+            reason,
+            balance,
+            recorder_user_id,
+            is_deleted,
+            create_time,
+            update_time,
+            sum,
+            type,
+            reason_time
+        ) values (
+            #{id},
+            #{claimerUserId},
+            #{reason},
+            #{balance},
+            #{recorderUserId},
+            #{isDeleted},
+            to_timestamp(#{createTime},'yyyy-MM-dd hh24:mi:ss'),
+            to_timestamp( #{updateTime},'yyyy-MM-dd hh24:mi:ss'),
+            #{sum},
+            #{type},
+            to_timestamp(#{reasonTime},'yyyy-MM-dd hh24:mi:ss')
+        )
+    </insert>
+
+    <!--查数量-->
+    <select id="selectCount" resultType="int">
+        select count(*)
+        from tb_finance_info
+        <where>
+            <if test="claimerUserId != null and claimerUserId !=''">
+                and claimer_user_id =  #{claimerUserId}
+            </if>
+            <if test="startTime != null and startTime !=''">
+                and reason_time &gt; TO_DATE(#{startTime},'YYYY-MM-DD HH24:MI:SS')
+            </if>
+            <if test="endTime != null and endTime !=''">
+                and reason_time &lt; TO_DATE( #{endTime},'YYYY-MM-DD HH24:MI:SS')
+            </if>
+        </where>
+    </select>
+
+    <!--条件查询带分页-->
+    <select id="selectFinanceInfoByConditon" resultType="TbFinanceInfo">
+        select *
+        from tb_finance_info
+        <where>
+            <if test="claimerUserId != null and claimerUserId !=''">
+                and claimer_user_id =  #{claimerUserId}
+            </if>
+            <if test="startTime != null and startTime !=''">
+                and reason_time &gt; to_timestamp(#{startTime},'yyyy-MM-dd hh24:mi:ss')
+            </if>
+            <if test="endTime != null and endTime !=''">
+                and reason_time &lt; to_timestamp( #{endTime},'yyyy-MM-dd hh24:mi:ss')
+            </if>
+        </where>
+        order by update_time desc
+        limit #{limit} offset #{skipCount}
+    </select>
+
+    <!--查全部-->
+    <select id="selectFinanceInfoList"   resultType="TbFinanceInfo">
+        select  * from tb_finance_info;
+    </select>
+
+
+    <!--获取图表历史日期-->
+    <select id="selectChartsDataHistory" resultType="String">
+        SELECT reason_time as reasonTime
+        FROM tb_finance_info
+    </select>
+
+    <!--获取图表历史数据-->
+    <select id="selectChartsBalanceHistory" resultType="String">
+        SELECT balance
+        FROM tb_finance_info
+    </select>
+
+    <!--获取图表对比数据-->
+    <select id="selectChartsFinanceInfoCompare" resultType="CompareVo">
+        SELECT sum(CAST(balance AS integer)) as value ,type as name
+        FROM tb_finance_info
+        GROUP BY type;
+    </select>
+</mapper>
